@@ -41,7 +41,7 @@ def split_merge(ds, head, tail, frames):
         # FRAME OPERATION BEGIN
         frames.append(copy.deepcopy(ds_yb))
         # FRAME OPERATION END
-        if right == tail or (left < mid and ds[left].value <= ds[right].value):
+        if (right == tail or (left < mid and ds[left].value <= ds[right].value)) and ds[left] not in tmp_list:
             tmp_list.append(ds[left])
             # FRAME OPERATION BEGIN
             frames[-1][left].set_color('r')
